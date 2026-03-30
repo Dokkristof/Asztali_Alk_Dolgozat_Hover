@@ -11,24 +11,26 @@
 
 
 package com.example;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-// import java.io.FileWriter;
-// import java.io.IOException;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Solution {
 
     public void task() {
         double[] temp = readTemp();
         printAverage(temp);
-        // writeToFile(temp, "hovek.txt");
+        writeToFile(temp, "hovek.txt");
     }
 
     private double[] readTemp() {
         Scanner sc = new Scanner(System.in);
         ArrayList<Double> list = new ArrayList<>();
 
-        System.out.println("Adja meg a hőmérsékletet! (kilépés - k):");
+        System.out.println("Adja meg a hőmérsékletet!:");
 
         while (sc.hasNextDouble()) {
             list.add(sc.nextDouble());
@@ -59,6 +61,23 @@ public class Solution {
 
         System.out.println("Átlaghőmérséklet: " + average);
     }
+    private void writeToFile(double[] array, String fileName) {
+            try {
+                FileWriter writer = new FileWriter(fileName);
+
+                for (double value : array) {
+                    writer.write(value + " ");
+                }
+
+                writer.close();
+                System.out.println("Sikeres mentés: " + fileName);
+
+            } catch (IOException e) {
+                System.out.println("Hiba! Probléma történt a fájl írásakor!");
+            }
+    }
+
+
 
 }
     
