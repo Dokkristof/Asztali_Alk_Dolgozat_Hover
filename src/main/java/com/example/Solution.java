@@ -60,15 +60,21 @@ public class Solution {
             sum += value;
         }
 
-        double average = (array.length > 0) ? sum / array.length : 0;
+        double average;
+
+        if (array.length > 0) {
+            average = sum / array.length;
+        } else {
+            average = 0;
+        }
 
         System.out.println("Átlaghőmérséklet: " + average);
     }
 
     private void writeToFile(double[] array, String fileName) {
         try (FileWriter writer = new FileWriter(fileName)) {
-            for (double t : array) {
-                writer.write(t + " ");
+            for (double temp : array) {
+                writer.write(temp + " ");
             }
             System.out.println("Mentés sikeres: " + fileName);
         } catch (IOException e) {
