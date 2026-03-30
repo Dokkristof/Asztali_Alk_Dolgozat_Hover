@@ -13,15 +13,15 @@
 package com.example;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.io.FileWriter;
-import java.io.IOException;
+// import java.io.FileWriter;
+// import java.io.IOException;
 
 public class Solution {
 
     public void task() {
         double[] temp = readTemp();
         printAverage(temp);
-        writeToFile(temp, "hovek.txt");
+        // writeToFile(temp, "hovek.txt");
     }
 
     private double[] readTemp() {
@@ -41,5 +41,24 @@ public class Solution {
 
         return array;
     }
+
+    private void printAverage(double[] array) {
+        double sum = 0;
+
+        for (double value : array) {
+            sum += value;
+        }
+
+        double average;
+
+        if (array.length > 0) {
+            average = sum / array.length;
+        } else {
+            average = 0;
+        }
+
+        System.out.println("Átlaghőmérséklet: " + average);
+    }
+
 }
     
