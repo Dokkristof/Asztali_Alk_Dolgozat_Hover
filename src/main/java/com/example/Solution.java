@@ -1,14 +1,3 @@
-/*
-* File: Solution.java
-* Author: Doktor Kristóf Márk
-* Copyright: 2026, Doktor Kristóf Márk
-* Group: Szoft I/N
-* Date: 2026-03-30
-* Github: https://github.com/Dokkristof/
-* Licenc: MIT
-*/
-
-
 
 /*
 * File: Solution.java
